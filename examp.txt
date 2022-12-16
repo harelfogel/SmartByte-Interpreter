@@ -1,3 +1,5 @@
 # This is a very useful piece of software
-VAR yovel=1
-IF yovel==1 THEN PRINT("YOVEL")
+VAR temperature = 24
+VAR humidity = 1000
+IF temperature > 24 THEN PRINT("Turn On The AC")
+IF humidity > 20 THEN PRINT("Turn On The yovel")
