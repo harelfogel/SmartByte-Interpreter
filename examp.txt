@@ -1,0 +1,3 @@
+# This is a very useful piece of software
+VAR yovel=1
+IF yovel==1 THEN PRINT("YOVEL")
