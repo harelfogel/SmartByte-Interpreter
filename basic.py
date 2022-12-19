@@ -1727,6 +1727,9 @@ class BuiltInFunction(BaseFunction):
     #####################################
 
     def execute_print(self, exec_ctx):
+        f = open("functions.txt", "a")
+        f.write(str(exec_ctx.symbol_table.get('value')) + '\n')
+        f.close()
         print(str(exec_ctx.symbol_table.get('value')))
         return RTResult().success(Number.null)
 
