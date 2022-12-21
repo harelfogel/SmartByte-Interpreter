@@ -1,7 +1,5 @@
 # This is a very useful piece of software
-VAR temperature = 21.3
+VAR temperature = 22.8
 VAR humidity = 1000
-IF temperature > 16 THEN PRINT("Turn On The AC")
-IF humidity > 20 THEN PRINT("Turn On The yovel")
-IF temperature > 18 THEN PRINT("Turn On The AC")
-IF temperature > 14 THEN PRINT("Turn On The AC")
+IF temperature > 14 THEN PRINT("Turn On The LIGHT")
+IF temperature > 14 THEN ACTIVATE("AC On 24")
