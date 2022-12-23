@@ -1,5 +1,0 @@
-# This is a very useful piece of software
-VAR temperature = 22.8
-VAR humidity = 1000
-IF temperature > 14 THEN PRINT("Turn On The LIGHT")
-IF temperature > 14 THEN ACTIVATE("AC On 24")
