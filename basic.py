@@ -1735,6 +1735,15 @@ class BuiltInFunction(BaseFunction):
 
     execute_print.arg_names = ['value']
 
+    def execute_activate(self, exec_ctx):
+        f = open("functions.txt", "a")
+        f.write(str(exec_ctx.symbol_table.get('value')) + '\n')
+        f.close()
+        print(str(exec_ctx.symbol_table.get('value')))
+        return RTResult().success(Number.null)
+
+    execute_activate.arg_names = ['value']
+
     def execute_print_ret(self, exec_ctx):
         return RTResult().success(String(str(exec_ctx.symbol_table.get('value'))))
 
@@ -1907,7 +1916,7 @@ class BuiltInFunction(BaseFunction):
 
     execute_run.arg_names = ["fn"]
 
-
+BuiltInFunction.activate = BuiltInFunction("print")
 BuiltInFunction.print = BuiltInFunction("print")
 BuiltInFunction.print_ret = BuiltInFunction("print_ret")
 BuiltInFunction.input = BuiltInFunction("input")
@@ -2224,6 +2233,7 @@ global_symbol_table.set("FALSE", Number.false)
 global_symbol_table.set("TRUE", Number.true)
 global_symbol_table.set("MATH_PI", Number.math_PI)
 global_symbol_table.set("PRINT", BuiltInFunction.print)
+global_symbol_table.set("ACTIVATE", BuiltInFunction.activate)
 global_symbol_table.set("PRINT_RET", BuiltInFunction.print_ret)
 global_symbol_table.set("INPUT", BuiltInFunction.input)
 global_symbol_table.set("INPUT_INT", BuiltInFunction.input_int)
